@@ -1,59 +1,89 @@
-# Booth Collective — Website
+# Common Thread Collective
 
-Marketing site for **Booth Collective**, a portable photo booth business based in Baton Rouge.
-Curated photo moments for weddings, corporate events, school celebrations, nonprofit gatherings, and community milestones.
+A static marketing site for **Common Thread Collective**, a Baton Rouge photo booth studio. Five pages, one stylesheet, no build step. Visual language follows `booth_collective.html`: parchment, ink, and gold; Georgia serif; script accents; square gold-outline buttons.
 
-## Tech
-Plain HTML, CSS, and JavaScript — no build step, no dependencies. Easy to edit in **Cursor** and version with **GitHub**.
-
-## Structure
 ```
-booth-collective-site/
 ├── index.html        # Home
 ├── about.html        # Our story
 ├── services.html     # What we offer
-├── gallery.html      # Photo gallery (placeholder tiles)
+├── gallery.html      # Photo gallery
 ├── contact.html      # Book / inquiry form
 ├── assets/
-│   ├── styles.css    # All shared styles + design tokens (edit brand colors here)
-│   ├── script.js     # Nav toggle, scroll reveals, inquiry form
+│   ├── styles.css    # All styles + brand color tokens (edit palette here)
+│   ├── script.js     # Nav toggle, scroll reveals, form handling
 │   └── gallery/      # Drop your real photos here
-└── README.md
+├── README.md
+└── .gitignore
 ```
 
 ## Run locally
-Just open `index.html` in a browser, or serve the folder:
+
+From this folder:
+
 ```bash
-python3 -m http.server 8000
-# then visit http://localhost:8000
+python3 -m http.server 43147
 ```
 
-## Editing
-- **Brand colors / fonts:** edit the `:root` tokens at the top of `assets/styles.css`.
-- **Text content:** edit the `.html` files directly.
-- **Gallery photos:** add images to `assets/gallery/`, then in `gallery.html` replace a
-  `<div class="gtile">...</div>` with `<div class="gtile"><img src="assets/gallery/your.jpg" alt=""></div>`.
-- **Contact form:** currently front-end only. To receive real submissions, wire the
-  `handleSubmit` function in `assets/script.js` to a service like Formspree, Netlify Forms, or your own API.
+Then open [http://127.0.0.1:43147](http://127.0.0.1:43147).
 
-## Git / GitHub workflow
+Any static server works (`npx serve . -p 43147`, VS Code Live Server, etc.). Opening the HTML files directly also works because all paths are relative.
+
+## Edit the brand
+
+Color, type, and spacing live at the top of `assets/styles.css`:
+
+```css
+:root {
+  --artifact-bg: #f6f0e6;
+  --artifact-bg-alt: #eee4d3;
+  --artifact-surface: #fbf7f0;
+  --artifact-ink: #1c1813;
+  --artifact-gold: #b0894a;
+  --artifact-gold-soft: #c7a468;
+  /* … */
+}
+```
+
+Change those tokens and the whole site follows. Body type is Helvetica Neue / Arial; headlines are Georgia; script is Great Vibes (a web stand-in for Snell Roundhand).
+
+## Swap in real photos
+
+1. Add JPEGs or WebPs to `assets/gallery/`.
+2. Update the `src` / `href` attributes in `gallery.html` (and any polaroids on `index.html` / `about.html`).
+3. Keep `data-category` as `weddings`, `private`, or `corporate` so the filters still work.
+4. Write a short `figcaption` — it shows in the lightbox.
+
+Sample images in that folder are Unsplash stand-ins so the layout is not empty on first clone.
+
+## Inquiry form
+
+The contact form validates in the browser and, on success, saves the submission to `localStorage` under `common-thread-inquiries`. That is enough to demo the flow. To receive real emails, point the form at a backend:
+
+- **Formspree:** set `action="https://formspree.io/f/your-id"` and `method="POST"` on `#inquiry-form`, then remove the `preventDefault` success path in `setupForm()` if you want native submit.
+- **Netlify Forms:** add `netlify` (and a `form-name`) to the `<form>` and deploy to Netlify.
+- **Your API:** POST the `FormData` from `setupForm()` in `assets/script.js`.
+
+## Publish on GitHub Pages
+
 ```bash
 git init
 git add .
-git commit -m "Initial Booth Collective site"
+git commit -m "Initial Common Thread Collective site"
 git branch -M main
-git remote add origin https://github.com/<your-username>/booth-collective-site.git
+git remote add origin https://github.com/<your-username>/common-thread-collective-site.git
 git push -u origin main
 ```
-Day-to-day:
-```bash
-git pull            # get latest
-# ...edit in Cursor...
-git add .
-git commit -m "Describe your change"
-git push
-```
 
-## Free hosting (optional)
-Enable **GitHub Pages**: repo Settings → Pages → deploy from `main` branch → `/root`.
-Your site goes live at `https://<your-username>.github.io/booth-collective-site/`.
+Then in the GitHub repo: **Settings → Pages → Deploy from a branch → `main` / root**. The site will be at `https://<your-username>.github.io/common-thread-collective-site/`.
+
+If the site lives in a project-pages subpath, keep using relative links (already the case) so CSS, JS, and images still resolve.
+
+## What the script does
+
+`assets/script.js` handles:
+
+- Mobile nav open/close
+- Header border after scroll
+- Scroll-triggered reveals (`data-reveal`)
+- Gallery filters and lightbox (Esc / arrows)
+- Contact form validation and success state

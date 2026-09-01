@@ -1,68 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Services | Booth Collective</title>
-<link rel="stylesheet" href="assets/styles.css">
-</head>
-<body>
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="index.html" class="brand"><span class="monogram">B|C</span><span class="brand-name">Booth Collective</span></a>
-    <nav class="site-nav" id="siteNav">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="services.html" class="nav-link active">Services</a>
-      <a href="gallery.html" class="nav-link">Gallery</a>
-      <a href="contact.html" class="nav-cta">Book Us</a>
-    </nav>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg></button>
-  </div>
-</header>
-<main>
-<section class="page-hero">
-  <div class="container reveal">
-    <span class="eyebrow">What We Offer</span>
-    <h1>Curated for every occasion</h1>
-    <p>From intimate weddings to large community celebrations, every experience is tailored to the moment.</p>
-    <div class="rule"></div>
-  </div>
-</section>
-<section class="section">
-  <div class="container">
-    <div class="services-grid">
-      <div class="service-card reveal"><div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="8" cy="14" r="5"/><circle cx="16" cy="14" r="5"/><path d="M8 9l2-4M16 9l-2-4"/></svg></div><span class="service-num">01</span><h3>Weddings</h3><p>Timeless moments, beautifully captured for the day you'll never forget.</p></div>
-      <div class="service-card reveal"><div class="service-icon"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="1.5"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></div><span class="service-num">02</span><h3>Corporate Events</h3><p>Professional. Polished. Unforgettable brand experiences for your team and guests.</p></div>
-      <div class="service-card reveal"><div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 4L2 9l10 5 10-5-10-5z"/><path d="M6 11v5c0 1 3 3 6 3s6-2 6-3v-5"/></svg></div><span class="service-num">03</span><h3>School Celebrations</h3><p>From prom to graduation — memories that last a lifetime.</p></div>
-      <div class="service-card reveal"><div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-9.5A3.5 3.5 0 0 1 12 7a3.5 3.5 0 0 1 7 3.5C19 15.6 12 20 12 20z"/></svg></div><span class="service-num">04</span><h3>Nonprofit Gatherings</h3><p>Amplifying impact through connection and community engagement.</p></div>
-      <div class="service-card reveal"><div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.4"/><path d="M3 19c0-3 3-5 6-5s6 2 6 5M15 18c0-2 2-3 4-3s2.5.6 3 2"/></svg></div><span class="service-num">05</span><h3>Community Milestones</h3><p>Celebrating the moments that bring us together.</p></div>
-      <div class="service-card reveal" style="display:grid;place-content:center;text-align:center;background:transparent;border-style:dashed"><p style="font-family:var(--serif);font-style:italic;font-size:1.2rem;color:var(--ink);margin-bottom:10px">Something else in mind?</p><a href="contact.html" class="btn-ghost">Let's talk</a></div>
-    </div>
-  </div>
-</section>
-</main>
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-top">
-      <div>
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
-          <span class="monogram" style="border-color:var(--gold-soft);color:var(--bg)">B|C</span>
-          <span class="brand-name" style="color:var(--bg)">Booth Collective</span>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Services — Common Thread Collective</title>
+    <meta
+      name="description"
+      content="Photo booth experiences for weddings, corporate events, school celebrations, nonprofit gatherings, and community milestones in Baton Rouge."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand">
+          <span class="monogram">C|T</span>
+          <span class="brand-name">Common Thread Collective</span>
+        </a>
+        <nav class="site-nav" id="siteNav">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="services.html" class="nav-link active">Services</a>
+          <a href="gallery.html" class="nav-link">Gallery</a>
+          <a href="contact.html" class="nav-cta">Book Us</a>
+        </nav>
+        <button class="nav-toggle" type="button" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <line x1="3" y1="7" x2="21" y2="7" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="17" x2="21" y2="17" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="page-hero">
+        <div class="container section-head" style="margin-bottom: 0">
+          <span class="eyebrow">What We Offer</span>
+          <h1>Curated for every occasion</h1>
+          <p>From intimate weddings to large community celebrations, every experience is tailored to the moment.</p>
+          <div class="rule"></div>
         </div>
-        <p style="max-width:300px;opacity:.8;font-size:.92rem">Curated photo moments for every celebration — rooted in friendship, built in Baton Rouge.</p>
+      </section>
+
+      <section class="section" style="padding-top: 48px">
+        <div class="container">
+          <div class="services-grid">
+            <article class="service-card reveal">
+              <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="8" cy="14" r="5" /><circle cx="16" cy="14" r="5" /><path d="M8 9l2-4M16 9l-2-4" /></svg></div>
+              <span class="service-num">01</span>
+              <h3>Weddings</h3>
+              <p>Timeless moments, beautifully captured for the day you'll never forget. Custom overlays, guest-book albums, and a host who treats your people like family.</p>
+            </article>
+            <article class="service-card reveal">
+              <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="1.5" /><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></div>
+              <span class="service-num">02</span>
+              <h3>Corporate Events</h3>
+              <p>Professional. Polished. Unforgettable brand experiences for your team and guests — color-matched backdrops and on-screen plates included.</p>
+            </article>
+            <article class="service-card reveal">
+              <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 4L2 9l10 5 10-5-10-5z" /><path d="M6 11v5c0 1 3 3 6 3s6-2 6-3v-5" /></svg></div>
+              <span class="service-num">03</span>
+              <h3>School Celebrations</h3>
+              <p>From prom to graduation — memories that last a lifetime, with a booth that looks as considered as the night itself.</p>
+            </article>
+            <article class="service-card reveal">
+              <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-9.5A3.5 3.5 0 0 1 12 7a3.5 3.5 0 0 1 7 3.5C19 15.6 12 20 12 20z" /></svg></div>
+              <span class="service-num">04</span>
+              <h3>Nonprofit Gatherings</h3>
+              <p>Amplifying impact through connection and community engagement. We keep the experience generous and the logistics quiet.</p>
+            </article>
+            <article class="service-card reveal">
+              <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="9" r="3" /><circle cx="17" cy="10" r="2.4" /><path d="M3 19c0-3 3-5 6-5s6 2 6 5M15 18c0-2 2-3 4-3s2.5.6 3 2" /></svg></div>
+              <span class="service-num">05</span>
+              <h3>Community Milestones</h3>
+              <p>Celebrating the moments that bring us together — reunions, anniversaries, neighborhood nights, and everything in between.</p>
+            </article>
+            <a class="service-card dashed reveal" href="contact.html">
+              <p style="font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: var(--artifact-ink); margin-bottom: 10px">
+                Something else in mind?
+              </p>
+              <span class="btn-ghost">Let's talk</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <div class="band">
+        <div class="container band-inner">
+          <span class="band-item">Real moments.</span>
+          <span class="band-dot">♥</span>
+          <span class="band-item">Real connection.</span>
+          <span class="band-dot">♥</span>
+          <span class="band-item">Always.</span>
+        </div>
       </div>
-      <div class="footer-links">
-        <div class="footer-col"><h4>Explore</h4>
-          <a href="about.html">About</a><a href="services.html">Services</a><a href="gallery.html">Gallery</a><a href="contact.html">Book Us</a></div>
-        <div class="footer-col"><h4>Connect</h4>
-          <a href="mailto:hello@boothcollective.com">hello@boothcollective.com</a><a href="tel:+12255550147">(225) 555-0147</a><a href="#">Instagram</a><a href="#">Facebook</a></div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <div>
+            <a class="footer-brand" href="index.html">
+              <span class="monogram">C|T</span>
+              <span class="brand-name">Common Thread Collective</span>
+            </a>
+            <p style="max-width: 300px; opacity: 0.8; font-size: 0.92rem">
+              Curated photo moments for every celebration — rooted in friendship, built in Baton Rouge.
+            </p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-col">
+              <h4>Explore</h4>
+              <a href="about.html">About</a>
+              <a href="services.html">Services</a>
+              <a href="gallery.html">Gallery</a>
+              <a href="contact.html">Book Us</a>
+            </div>
+            <div class="footer-col">
+              <h4>Connect</h4>
+              <a href="mailto:hello@commonthreadcollective.com">hello@commonthreadcollective.com</a>
+              <a href="contact.html">(225) 555-0147</a>
+              <a href="contact.html">Instagram</a>
+              <a href="contact.html">Facebook</a>
+            </div>
+          </div>
+          <div class="footer-badge">
+            <div>
+              <div class="bc">C|T</div>
+              <div class="sub">Curated Moments</div>
+              <div class="sub">Lasting Memories</div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">&copy; <span id="year"></span> Common Thread Collective. All rights reserved.</div>
       </div>
-      <div class="footer-badge"><div><div class="bc">B|C</div><div class="sub">Curated Moments</div><div class="sub">Lasting Memories</div></div></div>
-    </div>
-    <div class="footer-bottom">&copy; <span id="year"></span> Booth Collective. All rights reserved.</div>
-  </div>
-</footer>
-<script src="assets/script.js"></script>
-</body>
+    </footer>
+    <script src="assets/script.js"></script>
+  </body>
 </html>
