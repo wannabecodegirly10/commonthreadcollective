@@ -1,55 +1,69 @@
-// Booth Collective — shared site scripts
-document.addEventListener('DOMContentLoaded', function () {
-  // Footer year
-  var yearEl = document.getElementById('year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+(() => {
+  const navToggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector("#site-nav");
+  const year = document.querySelector("#year");
 
-  // Mobile nav toggle
-  var navToggle = document.getElementById('navToggle');
-  var siteNav = document.getElementById('siteNav');
-  if (navToggle && siteNav) {
-    navToggle.addEventListener('click', function () { siteNav.classList.toggle('open'); });
-    siteNav.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () { siteNav.classList.remove('open'); });
+  if (year) year.textContent = String(new Date().getFullYear());
+
+  if (navToggle && nav) {
+    navToggle.addEventListener("click", () => {
+      const open = nav.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", String(open));
+      navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    });
+
+    nav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+        navToggle.setAttribute("aria-label", "Open menu");
+      });
     });
   }
 
-  // Scroll reveal
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
-  } else {
-    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
-  }
+  const contactEmail = "commonthreadbr@gmail.com";
+  const inquiryForm = document.querySelector("#inquiry-form");
+  const formStatus = document.querySelector("#form-status");
 
-  // Inquiry form (front-end only for now — wire to a real service later)
-  var submitBtn = document.getElementById('submitBtn');
-  var formMsg = document.getElementById('formMsg');
-  if (submitBtn && formMsg) {
-    function handleSubmit() {
-      var name = (document.getElementById('f-name').value || '').trim();
-      var email = (document.getElementById('f-email').value || '').trim();
-      var type = document.getElementById('f-type').value;
-      var msg = (document.getElementById('f-msg').value || '').trim();
-      if (!name || !email || !type || !msg) {
-        formMsg.textContent = 'Please fill out your name, email, event type, and a short message.';
-        formMsg.className = 'form-msg err'; return;
-      }
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        formMsg.textContent = 'Please enter a valid email address.';
-        formMsg.className = 'form-msg err'; return;
-      }
-      // TODO: replace this block with a real submission (e.g. Formspree, Netlify Forms, or your API).
-      formMsg.textContent = 'Thank you, ' + name + "! Your inquiry has been captured. We'll be in touch soon.";
-      formMsg.className = 'form-msg ok';
-      ['f-name','f-email','f-type','f-date','f-msg'].forEach(function (id) {
-        var el = document.getElementById(id); if (el) el.value = '';
-      });
+  if (!inquiryForm) return;
+
+  inquiryForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const data = new FormData(inquiryForm);
+    const name = data.get("name") || "";
+    const email = data.get("email") || "";
+    const phone = data.get("phone") || "";
+    const date = data.get("date") || "";
+    const eventType = data.get("eventType") || "";
+    const experience = data.get("experience") || "";
+    const venue = data.get("venue") || "";
+    const message = data.get("message") || "";
+
+    const subject = encodeURIComponent(
+      "Common Thread Collective Inquiry: " + (eventType || "New Event") + (date ? " | " + date : "")
+    );
+    const body = encodeURIComponent(
+      "Name: " +
+        name +
+        "\nEmail: " +
+        email +
+        "\nPhone: " +
+        phone +
+        "\nEvent date: " +
+        date +
+        "\nEvent type: " +
+        eventType +
+        "\nExperience: " +
+        experience +
+        "\nVenue / Location: " +
+        venue +
+        "\nEvent details: " +
+        message
+    );
+
+    window.open("mailto:" + contactEmail + "?subject=" + subject + "&body=" + body, "_blank");
+    if (formStatus) {
+      formStatus.textContent = "Your email app should open with your inquiry details.";
     }
-    submitBtn.addEventListener('click', handleSubmit);
-  }
-});
+  });
+})();

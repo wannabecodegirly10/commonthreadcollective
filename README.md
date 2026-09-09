@@ -1,74 +1,79 @@
 # Common Thread Collective
 
-A static marketing site for **Common Thread Collective**, a Baton Rouge photo booth studio. Five pages, one stylesheet, no build step. Visual language follows `booth_collective.html`: parchment, ink, and gold; Georgia serif; script accents; square gold-outline buttons.
+A static one-page marketing site for **Common Thread Collective**, a Baton Rouge photo booth and brand activation studio. No build step.
 
 ```
-├── index.html        # Home
-├── about.html        # Our story
-├── services.html     # What we offer
-├── gallery.html      # Photo gallery
-├── contact.html      # Book / inquiry form
+├── index.html               # The whole site (hero, story, experiences, corporate, props, process, FAQ, inquiry)
+├── about.html               # Redirect → index.html#about
+├── services.html            # Redirect → index.html#experiences
+├── gallery.html             # Redirect → index.html#props
+├── contact.html             # Redirect → index.html#inquire
 ├── assets/
-│   ├── styles.css    # All styles + brand color tokens (edit palette here)
-│   ├── script.js     # Nav toggle, scroll reveals, form handling
-│   └── gallery/      # Drop your real photos here
+│   ├── styles.css           # All styles + brand color tokens
+│   ├── script.js            # Mobile nav, footer year, inquiry form
+│   ├── logo.svg             # Header and footer wordmark
+│   └── props-showcase.svg   # Placeholder prop concept graphic
+├── serve-local.ps1          # Local static server for Windows (port 43147)
 ├── README.md
 └── .gitignore
 ```
 
+The four redirect pages exist only so older bookmarks and links still land on the right section.
+
 ## Run locally
 
-From this folder:
+From this folder on Windows:
 
-```bash
-python3 -m http.server 43147
+```powershell
+powershell -ExecutionPolicy Bypass -File serve-local.ps1
 ```
 
-Then open [http://127.0.0.1:43147](http://127.0.0.1:43147).
+Then open <http://127.0.0.1:43147>.
 
-Any static server works (`npx serve . -p 43147`, VS Code Live Server, etc.). Opening the HTML files directly also works because all paths are relative.
+Any static server works (`python3 -m http.server 43147`, `npx serve . -p 43147`, VS Code Live Server). Opening `index.html` directly also works because all paths are relative.
 
 ## Edit the brand
 
-Color, type, and spacing live at the top of `assets/styles.css`:
+Color and spacing tokens live at the top of `assets/styles.css`:
 
 ```css
 :root {
-  --artifact-bg: #f6f0e6;
-  --artifact-bg-alt: #eee4d3;
-  --artifact-surface: #fbf7f0;
-  --artifact-ink: #1c1813;
-  --artifact-gold: #b0894a;
-  --artifact-gold-soft: #c7a468;
+  --cream: #f7f2e9;
+  --paper: #fffdf8;
+  --ink: #181716;
+  --muted: #6e6961;
+  --gold: #b28a49;
+  --gold-dark: #8e6a33;
   /* … */
 }
 ```
 
-Change those tokens and the whole site follows. Body type is Helvetica Neue / Arial; headlines are Georgia; script is Great Vibes (a web stand-in for Snell Roundhand).
+Body type is Libre Franklin; headlines are Georgia. Type sizes are fixed (32px h1, 24px h2, 19px h3, 16px body) to match the Canva design.
 
-## Swap in real photos
+## Swap in real artwork
 
-1. Add JPEGs or WebPs to `assets/gallery/`.
-2. Update the `src` / `href` attributes in `gallery.html` (and any polaroids on `index.html` / `about.html`).
-3. Keep `data-category` as `weddings`, `private`, or `corporate` so the filters still work.
-4. Write a short `figcaption` — it shows in the lightbox.
-
-Sample images in that folder are Unsplash stand-ins so the layout is not empty on first clone.
+- Replace `assets/logo.svg` with the real logo export. Keep the same filename or update the two `<img>` tags in `index.html`.
+- Replace `assets/props-showcase.svg` with a photo of the custom props, and update the `<figcaption>` beneath it.
 
 ## Inquiry form
 
-The contact form validates in the browser and, on success, saves the submission to `localStorage` under `common-thread-inquiries`. That is enough to demo the flow. To receive real emails, point the form at a backend:
+The form builds a `mailto:` message and opens the visitor's email app. The destination address is set in `assets/script.js`:
 
-- **Formspree:** set `action="https://formspree.io/f/your-id"` and `method="POST"` on `#inquiry-form`, then remove the `preventDefault` success path in `setupForm()` if you want native submit.
-- **Netlify Forms:** add `netlify` (and a `form-name`) to the `<form>` and deploy to Netlify.
-- **Your API:** POST the `FormData` from `setupForm()` in `assets/script.js`.
+```js
+const contactEmail = "commonthreadbr@gmail.com";
+```
+
+To collect submissions directly instead:
+
+- **Formspree:** set `action="https://formspree.io/f/your-id"` and `method="POST"` on `#inquiry-form`, then remove the submit handler in `assets/script.js`.
+- **Netlify Forms:** add `netlify` and a `form-name` to the `<form>` and deploy to Netlify.
 
 ## Publish on GitHub Pages
 
 ```bash
 git init
 git add .
-git commit -m "Initial Common Thread Collective site"
+git commit -m "Common Thread Collective site"
 git branch -M main
 git remote add origin https://github.com/<your-username>/common-thread-collective-site.git
 git push -u origin main
@@ -76,14 +81,4 @@ git push -u origin main
 
 Then in the GitHub repo: **Settings → Pages → Deploy from a branch → `main` / root**. The site will be at `https://<your-username>.github.io/common-thread-collective-site/`.
 
-If the site lives in a project-pages subpath, keep using relative links (already the case) so CSS, JS, and images still resolve.
-
-## What the script does
-
-`assets/script.js` handles:
-
-- Mobile nav open/close
-- Header border after scroll
-- Scroll-triggered reveals (`data-reveal`)
-- Gallery filters and lightbox (Esc / arrows)
-- Contact form validation and success state
+All links are relative, so the site also works from a project subpath.
