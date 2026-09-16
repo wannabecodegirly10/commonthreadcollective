@@ -1,15 +1,34 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 520" role="img" aria-labelledby="propsTitle">
   <title id="propsTitle">Custom branded prop concepts for corporate and campus events</title>
   <rect width="1180" height="520" fill="#efe6d8"/>
-  <rect x="70" y="80" width="320" height="220" rx="18" fill="#171614"/>
-  <rect x="94" y="104" width="272" height="148" rx="8" fill="#2b2722"/>
-  <text x="230" y="188" text-anchor="middle" fill="#d8bc87" font-family="Georgia, serif" font-size="22">YOUR LOGO</text>
+  <rect x="104" y="74" width="252" height="162" rx="10" fill="#171614"/>
+  <rect x="116" y="86" width="228" height="138" rx="6" fill="#2b2722"/>
+  <text x="230" y="162" text-anchor="middle" fill="#d8bc87" font-family="Georgia, serif" font-size="20">YOUR LOGO</text>
+  <rect x="104" y="236" width="252" height="7" rx="3.5" fill="#0f0e0d"/>
+  <polygon points="100,243 360,243 390,278 70,278" fill="#171614"/>
+  <polygon points="116,249 344,249 364,267 96,267" fill="#2b2722"/>
+  <polygon points="204,270 256,270 260,276 200,276" fill="#3a352e"/>
+  <rect x="70" y="278" width="320" height="7" rx="3.5" fill="#0f0e0d"/>
   <text x="230" y="340" text-anchor="middle" fill="#6e6961" font-family="Libre Franklin, sans-serif" font-size="16">Oversized branded laptop</text>
-  <rect x="430" y="58" width="300" height="380" rx="10" fill="#fffdf8" stroke="#ded5c6"/>
-  <rect x="454" y="82" width="252" height="160" fill="#c8a56c"/>
-  <text x="580" y="170" text-anchor="middle" fill="#171614" font-family="Georgia, serif" font-size="28">COVER</text>
-  <text x="580" y="290" text-anchor="middle" fill="#181716" font-family="Georgia, serif" font-size="22">Magazine</text>
-  <text x="580" y="320" text-anchor="middle" fill="#6e6961" font-family="Libre Franklin, sans-serif" font-size="15">Campaign as a cover story</text>
+  <rect x="455" y="66" width="250" height="326" rx="6" fill="#fffdf8" stroke="#ded5c6"/>
+  <text x="580" y="112" text-anchor="middle" fill="#181716" font-family="Georgia, serif" font-size="32" letter-spacing="2">COVER</text>
+  <line x1="477" y1="126" x2="683" y2="126" stroke="#ded5c6"/>
+  <rect x="477" y="142" width="206" height="148" fill="#c8a56c"/>
+  <text x="580" y="222" text-anchor="middle" fill="#171614" font-family="Georgia, serif" font-size="16">YOUR CAMPAIGN</text>
+  <line x1="477" y1="312" x2="643" y2="312" stroke="#ded5c6"/>
+  <line x1="477" y1="330" x2="601" y2="330" stroke="#ded5c6"/>
+  <line x1="477" y1="348" x2="655" y2="348" stroke="#ded5c6"/>
+  <g fill="#181716">
+    <rect x="640" y="358" width="2" height="20"/>
+    <rect x="645" y="358" width="3" height="20"/>
+    <rect x="651" y="358" width="1.5" height="20"/>
+    <rect x="655" y="358" width="3" height="20"/>
+    <rect x="661" y="358" width="2" height="20"/>
+    <rect x="666" y="358" width="4" height="20"/>
+    <rect x="673" y="358" width="2" height="20"/>
+    <rect x="678" y="358" width="3" height="20"/>
+  </g>
+  <text x="580" y="425" text-anchor="middle" fill="#6e6961" font-family="Libre Franklin, sans-serif" font-size="16">Campaign as a cover story</text>
   <rect x="780" y="96" width="330" height="280" fill="#fffdf8" stroke="#181716"/>
   <text x="945" y="150" text-anchor="middle" fill="#181716" font-family="Georgia, serif" font-size="26">THE HEADLINE</text>
   <line x1="810" y1="180" x2="1080" y2="180" stroke="#ded5c6"/>
