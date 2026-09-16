@@ -29,31 +29,22 @@
     <rect x="678" y="358" width="3" height="20"/>
   </g>
   <text x="580" y="425" text-anchor="middle" fill="#6e6961" font-family="Libre Franklin, sans-serif" font-size="16">Campaign as a magazine cover story</text>
-  <rect x="780" y="96" width="330" height="140" fill="#f4efe3"/>
-  <rect x="780" y="230" width="330" height="6" fill="#e6ddcc"/>
-  <rect x="780" y="236" width="330" height="140" fill="#e9e1d1"/>
-  <line x1="780" y1="236" x2="1110" y2="236" stroke="#c3b7a0"/>
-  <rect x="780" y="96" width="330" height="280" fill="none" stroke="#cdc1ab"/>
-  <text x="945" y="124" text-anchor="middle" fill="#6e6961" font-family="Georgia, serif" font-size="15" letter-spacing="3">DAILY EDITION</text>
-  <line x1="800" y1="134" x2="1090" y2="134" stroke="#cdc1ab"/>
-  <text x="945" y="172" text-anchor="middle" fill="#181716" font-family="Georgia, serif" font-size="26">THE HEADLINE</text>
-  <line x1="800" y1="186" x2="1090" y2="186" stroke="#cdc1ab"/>
+  <rect x="787" y="122" width="326" height="4" fill="#ddd3c0"/>
+  <rect x="783" y="126" width="334" height="4" fill="#e4dbc9"/>
+  <rect x="779" y="130" width="342" height="196" fill="#f4efe3"/>
+  <rect x="779" y="306" width="342" height="20" fill="#eae2d2"/>
+  <rect x="779" y="326" width="342" height="9" rx="4.5" fill="#ded4c1"/>
+  <rect x="779" y="130" width="342" height="196" fill="none" stroke="#cdc1ab"/>
+  <text x="950" y="160" text-anchor="middle" fill="#6e6961" font-family="Georgia, serif" font-size="15" letter-spacing="3">DAILY EDITION</text>
+  <line x1="800" y1="170" x2="1100" y2="170" stroke="#cdc1ab"/>
+  <text x="950" y="208" text-anchor="middle" fill="#181716" font-family="Georgia, serif" font-size="26">THE HEADLINE</text>
+  <line x1="800" y1="222" x2="1100" y2="222" stroke="#cdc1ab"/>
+  <rect x="800" y="234" width="132" height="62" fill="#bcae97"/>
   <g stroke="#d5c9b4">
-    <line x1="800" y1="202" x2="938" y2="202"/>
-    <line x1="800" y1="214" x2="938" y2="214"/>
-    <line x1="800" y1="226" x2="912" y2="226"/>
-    <line x1="952" y1="202" x2="1090" y2="202"/>
-    <line x1="952" y1="214" x2="1090" y2="214"/>
-    <line x1="952" y1="226" x2="1064" y2="226"/>
+    <line x1="948" y1="240" x2="1100" y2="240"/>
+    <line x1="948" y1="254" x2="1100" y2="254"/>
+    <line x1="948" y1="268" x2="1100" y2="268"/>
+    <line x1="948" y1="282" x2="1052" y2="282"/>
   </g>
-  <rect x="800" y="254" width="138" height="78" fill="#bcae97"/>
-  <g stroke="#cdc1ab">
-    <line x1="952" y1="262" x2="1090" y2="262"/>
-    <line x1="952" y1="278" x2="1090" y2="278"/>
-    <line x1="952" y1="294" x2="1090" y2="294"/>
-    <line x1="952" y1="310" x2="1064" y2="310"/>
-    <line x1="800" y1="350" x2="1090" y2="350"/>
-    <line x1="800" y1="364" x2="1010" y2="364"/>
-  </g>
-  <text x="945" y="410" text-anchor="middle" fill="#6e6961" font-family="Libre Franklin, sans-serif" font-size="16">Newspaper front page</text>
+  <text x="950" y="410" text-anchor="middle" fill="#6e6961" font-family="Libre Franklin, sans-serif" font-size="16">Newspaper front page</text>
 </svg>
