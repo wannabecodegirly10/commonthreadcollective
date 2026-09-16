@@ -189,23 +189,19 @@ code {
 
 .brand-logo {
   display: block;
-  width: 190px;
+  width: 175px;
   max-width: 42vw;
   height: auto;
-  object-fit: contain;
 }
 
 .brand-logo-header {
-  width: 210px;
-  max-width: 62vw;
-  max-height: 62px;
+  width: 175px;
+  max-width: 58vw;
 }
 
 .brand-logo-footer {
-  width: 210px;
-  max-width: 62vw;
-  max-height: 62px;
-  object-position: left center;
+  width: 175px;
+  max-width: 58vw;
   filter: brightness(0) invert(1);
   opacity: 0.94;
 }
@@ -907,12 +903,12 @@ textarea {
   }
 
   .brand-logo {
-    width: 165px;
+    width: 155px;
     max-width: 55vw;
   }
 
   .brand-logo-footer {
-    width: 190px;
+    width: 175px;
     max-width: 70vw;
   }
 }

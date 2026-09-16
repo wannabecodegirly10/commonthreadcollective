@@ -11,7 +11,7 @@ A static one-page marketing site for **Common Thread Collective**, a Baton Rouge
 ├── assets/
 │   ├── styles.css           # All styles + brand color tokens
 │   ├── script.js            # Mobile nav, footer year, inquiry form
-│   ├── logo.svg             # Header and footer wordmark
+│   ├── logo.png             # Header and footer wordmark (transparent)
 │   └── props-showcase.svg   # Placeholder prop concept graphic
 ├── serve-local.ps1          # Local static server for Windows (port 43147)
 ├── README.md
@@ -52,7 +52,8 @@ Body type is Libre Franklin; headlines are Georgia. Type sizes are fixed (32px h
 
 ## Swap in real artwork
 
-- Replace `assets/logo.svg` with the real logo export. Keep the same filename or update the two `<img>` tags in `index.html`.
+- Replace `assets/logo.png` with a new logo export. Keep the same filename or update the two `<img>` tags in `index.html`, and update their `width`/`height` to the new pixel dimensions.
+- The logo must have a transparent background and dark artwork. The footer sits on a near-black panel and reuses the same file, inverting it to white via `filter: brightness(0) invert(1)` in `.brand-logo-footer`.
 - Replace `assets/props-showcase.svg` with a photo of the custom props, and update the `<figcaption>` beneath it.
 
 ## Inquiry form
