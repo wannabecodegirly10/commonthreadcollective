@@ -9,3 +9,6 @@ dist/
 .env
 .env.*
 *.local
+
+# Superseded "Booth Collective" prototype; kept on disk but not part of the site
+booth-collective-site/
